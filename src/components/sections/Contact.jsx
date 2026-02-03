@@ -308,16 +308,40 @@ const Contact = () => {
     if (!validateForm()) return;
 
     setIsSubmitting(true);
+    setErrors({});
 
-    // Simulate API call
-    await new Promise(resolve => setTimeout(resolve, 1500));
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
 
-    setIsSubmitting(false);
-    setSubmitSuccess(true);
-    setFormData({ name: '', email: '', subject: '', message: '' });
+      const data = await response.json();
 
-    // Reset success message after 5 seconds
-    setTimeout(() => setSubmitSuccess(false), 5000);
+      if (!response.ok) {
+        // Handle validation errors from the server
+        if (data.errors) {
+          setErrors(data.errors);
+        }
+        throw new Error(data.message || 'Failed to send message');
+      }
+
+      setSubmitSuccess(true);
+      setFormData({ name: '', email: '', subject: '', message: '' });
+
+      // Reset success message after 5 seconds
+      setTimeout(() => setSubmitSuccess(false), 5000);
+    } catch (error) {
+      console.error('Contact form error:', error);
+      setErrors({ 
+        submit: error.message || 'Failed to send message. Please try again later.' 
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -506,6 +530,23 @@ const Contact = () => {
                     </span>
                     <span className={styles.buttonShine} />
                   </motion.button>
+
+                  {/* Submit Error Message */}
+                  <AnimatePresence>
+                    {errors.submit && (
+                      <motion.div
+                        className={styles.submitError}
+                        initial={{ opacity: 0, y: -10 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        exit={{ opacity: 0, y: -10 }}
+                      >
+                        <svg viewBox="0 0 24 24" fill="currentColor" className={styles.errorIcon}>
+                          <path d="M12 22C6.477 22 2 17.523 2 12S6.477 2 12 2s10 4.477 10 10-4.477 10-10 10zm-1-7v2h2v-2h-2zm0-8v6h2V7h-2z"/>
+                        </svg>
+                        {errors.submit}
+                      </motion.div>
+                    )}
+                  </AnimatePresence>
                 </motion.form>
               )}
             </AnimatePresence>
