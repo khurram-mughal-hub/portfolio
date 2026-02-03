@@ -1,0 +1,91 @@
+/**
+ * Card Component Styles
+ */
+
+.card {
+  background: var(--bg-card);
+  border-radius: 16px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+/* Variants */
+.default {
+  border: 1px solid var(--border-color);
+}
+
+.elevated {
+  box-shadow: var(--shadow-md);
+  border: none;
+}
+
+.outlined {
+  border: 2px solid var(--border-color);
+  background: transparent;
+}
+
+.gradient {
+  background: linear-gradient(135deg, var(--bg-card) 0%, var(--bg-secondary) 100%);
+  border: 1px solid var(--border-color);
+}
+
+/* Padding */
+.padding-none {
+  padding: 0;
+}
+
+.padding-small {
+  padding: 1rem;
+}
+
+.padding-medium {
+  padding: 1.5rem;
+}
+
+.padding-large {
+  padding: 2rem;
+}
+
+/* States */
+.hoverable:hover {
+  box-shadow: var(--shadow-lg);
+  border-color: var(--primary-light);
+}
+
+.clickable {
+  cursor: pointer;
+}
+
+/* Subcomponents */
+.cardHeader {
+  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--border-color);
+  margin-bottom: 1rem;
+}
+
+.cardBody {
+  flex: 1;
+}
+
+.cardFooter {
+  padding-top: 1rem;
+  border-top: 1px solid var(--border-color);
+  margin-top: 1rem;
+}
+
+/* Card with no padding adjustments */
+.padding-none .cardHeader,
+.padding-none .cardBody,
+.padding-none .cardFooter {
+  padding: 1rem;
+}
+
+.padding-none .cardHeader {
+  padding-bottom: 1rem;
+  margin-bottom: 0;
+}
+
+.padding-none .cardFooter {
+  padding-top: 1rem;
+  margin-top: 0;
+}

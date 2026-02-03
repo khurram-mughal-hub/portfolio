@@ -1,0 +1,860 @@
+/**
+ * Hero Section Styles - World-Class Design
+ * Immersive, cinematic hero with layered effects
+ */
+
+.hero {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  background: var(--bg-primary);
+}
+
+/* ==========================================
+   Background Layers
+   ========================================== */
+.backgroundLayers {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+}
+
+/* Noise texture overlay */
+.noiseOverlay {
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+  opacity: 0.03;
+  pointer-events: none;
+  z-index: 10;
+}
+
+/* Gradient mesh orbs */
+.gradientMesh {
+  position: absolute;
+  inset: 0;
+  filter: blur(60px);
+  opacity: 0.6;
+  contain: strict;
+}
+
+.gradientOrb1 {
+  position: absolute;
+  width: 50vw;
+  height: 50vw;
+  max-width: 600px;
+  max-height: 600px;
+  top: -10%;
+  right: -10%;
+  background: radial-gradient(circle, rgba(99, 102, 241, 0.4) 0%, transparent 70%);
+  border-radius: 50%;
+}
+
+.gradientOrb2 {
+  position: absolute;
+  width: 40vw;
+  height: 40vw;
+  max-width: 500px;
+  max-height: 500px;
+  bottom: -5%;
+  left: -5%;
+  background: radial-gradient(circle, rgba(236, 72, 153, 0.3) 0%, transparent 70%);
+  border-radius: 50%;
+}
+
+.gradientOrb3 {
+  position: absolute;
+  width: 45vw;
+  height: 45vw;
+  max-width: 550px;
+  max-height: 550px;
+  top: 40%;
+  left: 30%;
+  background: radial-gradient(circle, rgba(139, 92, 246, 0.25) 0%, transparent 70%);
+  border-radius: 50%;
+}
+
+/* CSS Animations for gradient orbs - GPU accelerated */
+@keyframes orbFloat1 {
+  0%, 100% { transform: translate3d(0, 0, 0) scale(1); }
+  33% { transform: translate3d(100px, 50px, 0) scale(1.2); }
+  66% { transform: translate3d(50px, 100px, 0) scale(0.8); }
+}
+
+@keyframes orbFloat2 {
+  0%, 100% { transform: translate3d(0, 0, 0) scale(1); }
+  33% { transform: translate3d(-80px, 80px, 0) scale(0.8); }
+  66% { transform: translate3d(-40px, -40px, 0) scale(1.3); }
+}
+
+@keyframes orbFloat3 {
+  0%, 100% { transform: translate3d(0, 0, 0) scale(1.2); }
+  33% { transform: translate3d(60px, -60px, 0) scale(1); }
+  66% { transform: translate3d(-60px, 60px, 0) scale(1.4); }
+}
+
+.orbAnimate1 {
+  animation: orbFloat1 20s ease-in-out infinite;
+  will-change: transform;
+}
+
+.orbAnimate2 {
+  animation: orbFloat2 25s ease-in-out infinite;
+  will-change: transform;
+}
+
+.orbAnimate3 {
+  animation: orbFloat3 30s ease-in-out infinite;
+  will-change: transform;
+}
+
+/* Grid pattern */
+.gridPattern {
+  position: absolute;
+  inset: 0;
+  background-image: 
+    linear-gradient(rgba(99, 102, 241, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(99, 102, 241, 0.03) 1px, transparent 1px);
+  background-size: 60px 60px;
+  mask-image: radial-gradient(ellipse at center, black 30%, transparent 70%);
+  -webkit-mask-image: radial-gradient(ellipse at center, black 30%, transparent 70%);
+}
+
+/* Particle field */
+.particleField {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+/* CSS animation for particles - much more efficient than JS */
+@keyframes particleFloat {
+  0%, 100% { 
+    transform: translate3d(-10px, -20px, 0) scale(1);
+    opacity: 0.3;
+  }
+  50% { 
+    transform: translate3d(10px, 20px, 0) scale(1.2);
+    opacity: 0.8;
+  }
+}
+
+.particle {
+  position: absolute;
+  background: linear-gradient(135deg, rgba(99, 102, 241, 0.8), rgba(139, 92, 246, 0.8));
+  border-radius: 50%;
+  box-shadow: 0 0 10px rgba(99, 102, 241, 0.5);
+  animation: particleFloat ease-in-out infinite;
+  will-change: transform, opacity;
+}
+
+/* CSS animations for floating shapes */
+@keyframes shapeFloat1 {
+  0%, 100% { transform: rotateX(0deg) rotateY(0deg) translateY(-20px); }
+  50% { transform: rotateX(180deg) rotateY(180deg) translateY(20px); }
+}
+
+@keyframes shapeFloat2 {
+  0%, 100% { transform: scale(1) translateY(0); }
+  50% { transform: scale(1.2) translateY(-30px); }
+}
+
+@keyframes shapeFloat3 {
+  0% { transform: rotateZ(0deg) rotateX(0deg); }
+  50% { transform: rotateZ(180deg) rotateX(180deg); }
+  100% { transform: rotateZ(360deg) rotateX(0deg); }
+}
+
+@keyframes shapeFloat4 {
+  0%, 100% { transform: rotateY(0deg) translateY(10px); }
+  50% { transform: rotateY(180deg) translateY(-10px); }
+}
+
+.shapeAnimate1 {
+  animation: shapeFloat1 20s ease-in-out infinite;
+  will-change: transform;
+}
+
+.shapeAnimate2 {
+  animation: shapeFloat2 5s ease-in-out infinite;
+  will-change: transform;
+}
+
+.shapeAnimate3 {
+  animation: shapeFloat3 25s linear infinite;
+  will-change: transform;
+}
+
+.shapeAnimate4 {
+  animation: shapeFloat4 18s ease-in-out infinite;
+  will-change: transform;
+}
+
+/* Floating 3D shapes */
+.floatingShapes {
+  position: absolute;
+  inset: 0;
+  perspective: 1000px;
+  pointer-events: none;
+}
+
+.shape {
+  position: absolute;
+  transform-style: preserve-3d;
+}
+
+.shapeCube {
+  top: 15%;
+  right: 15%;
+  width: 60px;
+  height: 60px;
+  background: linear-gradient(135deg, rgba(99, 102, 241, 0.2), rgba(139, 92, 246, 0.1));
+  border: 1px solid rgba(99, 102, 241, 0.3);
+  border-radius: 8px;
+  backdrop-filter: blur(5px);
+}
+
+.shapeSphere {
+  bottom: 25%;
+  right: 20%;
+  width: 80px;
+  height: 80px;
+  background: radial-gradient(circle at 30% 30%, rgba(236, 72, 153, 0.4), rgba(236, 72, 153, 0.1));
+  border-radius: 50%;
+  box-shadow: 
+    inset -10px -10px 30px rgba(0, 0, 0, 0.2),
+    inset 10px 10px 30px rgba(255, 255, 255, 0.1);
+}
+
+.shapeRing {
+  top: 35%;
+  right: 10%;
+  width: 100px;
+  height: 100px;
+  border: 3px solid rgba(99, 102, 241, 0.3);
+  border-radius: 50%;
+  background: transparent;
+}
+
+.shapePyramid {
+  bottom: 15%;
+  left: 10%;
+  width: 0;
+  height: 0;
+  border-left: 30px solid transparent;
+  border-right: 30px solid transparent;
+  border-bottom: 50px solid rgba(139, 92, 246, 0.2);
+}
+
+/* ==========================================
+   Main Content
+   ========================================== */
+.container {
+  position: relative;
+  z-index: 1;
+  max-width: 1400px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 3rem;
+  padding-top: 80px;
+  display: flex;
+  align-items: center;
+  min-height: calc(100vh - 60px);
+}
+
+.content {
+  max-width: 800px;
+}
+
+/* Greeting badge */
+.greetingBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  background: rgba(99, 102, 241, 0.1);
+  border: 1px solid rgba(99, 102, 241, 0.2);
+  border-radius: 100px;
+  margin-bottom: 1.5rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--primary-color);
+  backdrop-filter: blur(10px);
+}
+
+.statusDot {
+  width: 8px;
+  height: 8px;
+  background: #10b981;
+  border-radius: 50%;
+  animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.7; transform: scale(1.2); }
+}
+
+/* Name styles */
+.nameContainer {
+  display: inline-block;
+  margin-bottom: 1rem;
+}
+
+.name {
+  font-size: clamp(3.5rem, 10vw, 7rem);
+  font-weight: 800;
+  line-height: 1;
+  margin: 0;
+  letter-spacing: -0.03em;
+  color: var(--text-primary);
+}
+
+.animatedText {
+  display: inline-flex;
+  perspective: 500px;
+}
+
+.char {
+  display: inline-block;
+  will-change: transform;
+}
+
+.nameDot {
+  color: var(--primary-color);
+  display: inline-block;
+}
+
+/* Title styles */
+.titleContainer {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.wordRevealContainer {
+  overflow: hidden;
+  display: inline-block;
+}
+
+.titleWord {
+  font-size: clamp(1.5rem, 4vw, 2.75rem);
+  font-weight: 600;
+  background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 50%, var(--accent-color) 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline-block;
+}
+
+/* Subtitle */
+.subtitle {
+  font-size: clamp(1rem, 2vw, 1.25rem);
+  color: var(--text-secondary);
+  line-height: 1.8;
+  max-width: 600px;
+  margin: 0 0 2.5rem 0;
+}
+
+/* CTA Buttons */
+.ctaButtons {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-bottom: 3rem;
+}
+
+.magneticWrapper {
+  display: inline-block;
+}
+
+.ctaIcon {
+  display: inline-flex;
+  margin-left: 0.5rem;
+}
+
+/* Social links */
+.socialLinks {
+  display: flex;
+  gap: 0.75rem;
+}
+
+.socialLink {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: var(--text-secondary);
+  backdrop-filter: blur(10px);
+  transition: all 0.3s ease;
+  overflow: hidden;
+}
+
+.socialLink::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.socialLink:hover {
+  border-color: var(--primary-color);
+  color: white;
+}
+
+.socialLink:hover::before {
+  opacity: 1;
+}
+
+.socialLink svg {
+  position: relative;
+  z-index: 1;
+}
+
+.socialTooltip {
+  position: absolute;
+  bottom: 120%;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 0.5rem 0.75rem;
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: var(--text-primary);
+  white-space: nowrap;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+  pointer-events: none;
+}
+
+.socialTooltip::after {
+  content: '';
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  border: 6px solid transparent;
+  border-top-color: var(--border-color);
+}
+
+.socialLink:hover .socialTooltip {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(-50%) translateY(-5px);
+}
+
+/* Scroll indicator */
+.scrollIndicator {
+  position: absolute;
+  bottom: 3rem;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.scrollText {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  color: var(--text-tertiary);
+  font-weight: 500;
+}
+
+.scrollLine {
+  width: 1px;
+  height: 60px;
+  background: linear-gradient(to bottom, var(--primary-color), transparent);
+  position: relative;
+  overflow: hidden;
+}
+
+.scrollDot {
+  width: 6px;
+  height: 6px;
+  background: var(--primary-color);
+  border-radius: 50%;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  box-shadow: 0 0 10px var(--primary-color);
+}
+
+/* Bottom fade gradient */
+.bottomFade {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 200px;
+  background: linear-gradient(to top, var(--bg-primary), transparent);
+  pointer-events: none;
+  z-index: 2;
+}
+
+/* ==========================================
+   Responsive Design
+   ========================================== */
+@media (max-width: 1024px) {
+  .shapeCube,
+  .shapeSphere,
+  .shapeRing,
+  .shapePyramid {
+    display: none;
+  }
+  
+  .container {
+    padding: 0 2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero {
+    padding-top: 60px;
+    min-height: auto;
+  }
+  
+  .container {
+    padding: 0 1.5rem;
+    padding-top: 60px;
+    min-height: calc(100vh - 40px);
+  }
+  
+  .content {
+    text-align: center;
+    max-width: 100%;
+  }
+  
+  .greetingBadge {
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .nameContainer {
+    display: block;
+  }
+  
+  .titleContainer {
+    justify-content: center;
+  }
+  
+  .subtitle {
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .ctaButtons {
+    justify-content: center;
+  }
+  
+  .socialLinks {
+    justify-content: center;
+  }
+  
+  .gradientOrb1,
+  .gradientOrb2,
+  .gradientOrb3 {
+    opacity: 0.4;
+  }
+  
+  .particleField .particle {
+    opacity: 0.5;
+  }
+  
+  .scrollIndicator {
+    bottom: 2rem;
+  }
+  
+  .scrollLine {
+    height: 40px;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero {
+    padding-top: 40px;
+  }
+  
+  .container {
+    padding-top: 40px;
+    min-height: calc(100vh - 20px);
+  }
+  
+  .name {
+    font-size: clamp(2.5rem, 12vw, 4rem);
+  }
+  
+  .titleWord {
+    font-size: clamp(1.25rem, 5vw, 1.75rem);
+  }
+  
+  .subtitle {
+    font-size: 1rem;
+  }
+  
+  .ctaButtons {
+    flex-direction: column;
+    width: 100%;
+  }
+  
+  .magneticWrapper {
+    width: 100%;
+  }
+  
+  .magneticWrapper button,
+  .magneticWrapper a {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+/* Dark mode enhancements */
+@media (prefers-color-scheme: dark) {
+  .noiseOverlay {
+    opacity: 0.04;
+  }
+  
+  .gridPattern {
+    background-image: 
+      linear-gradient(rgba(99, 102, 241, 0.05) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(99, 102, 241, 0.05) 1px, transparent 1px);
+  }
+}
+
+/* Reduced motion preference */
+@media (prefers-reduced-motion: reduce) {
+  .gradientOrb1,
+  .gradientOrb2,
+  .gradientOrb3,
+  .particle,
+  .shape,
+  .statusDot,
+  .scrollDot {
+    animation: none !important;
+  }
+}
+
+/* ==========================================
+   Tech Stack Visual - Right Side
+   ========================================== */
+.contentWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 4rem;
+  width: 100%;
+}
+
+.techVisualContainer {
+  position: relative;
+  flex: 1;
+  max-width: 500px;
+  height: 450px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.visualCard {
+  position: relative;
+  width: 100%;
+  max-width: 380px;
+  background: rgba(20, 20, 35, 0.8);
+  border: 1px solid rgba(99, 102, 241, 0.2);
+  border-radius: 16px;
+  overflow: hidden;
+  backdrop-filter: blur(20px);
+  box-shadow: 
+    0 25px 80px -12px rgba(0, 0, 0, 0.4),
+    0 0 40px rgba(99, 102, 241, 0.1);
+}
+
+.cardGlow {
+  position: absolute;
+  inset: -2px;
+  background: linear-gradient(135deg, rgba(99, 102, 241, 0.3), transparent 50%, rgba(236, 72, 153, 0.2));
+  border-radius: 18px;
+  z-index: -1;
+  opacity: 0.5;
+}
+
+/* Code Editor */
+.codeEditor {
+  font-family: 'SF Mono', 'Monaco', 'Inconsolata', 'Fira Code', monospace;
+}
+
+.editorHeader {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.75rem 1rem;
+  background: rgba(0, 0, 0, 0.3);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.editorDots {
+  display: flex;
+  gap: 6px;
+}
+
+.dotRed, .dotYellow, .dotGreen {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+}
+
+.dotRed { background: #ff5f57; }
+.dotYellow { background: #febc2e; }
+.dotGreen { background: #28c840; }
+
+.editorTitle {
+  font-size: 0.75rem;
+  color: rgba(255, 255, 255, 0.5);
+  flex: 1;
+  text-align: center;
+}
+
+.editorContent {
+  padding: 1.25rem;
+  min-height: 160px;
+  position: relative;
+}
+
+.codeLine {
+  display: flex;
+  gap: 1rem;
+  font-size: 0.85rem;
+  line-height: 1.8;
+}
+
+.lineNumber {
+  color: rgba(255, 255, 255, 0.2);
+  user-select: none;
+  min-width: 1.5rem;
+  text-align: right;
+}
+
+.cursor {
+  display: inline-block;
+  width: 2px;
+  height: 1rem;
+  background: #6366f1;
+  margin-left: 0.5rem;
+  vertical-align: middle;
+}
+
+/* Floating Tech Icons */
+.floatingTech {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.25rem;
+  padding: 0.75rem;
+  background: rgba(20, 20, 35, 0.9);
+  border: 1px solid rgba(99, 102, 241, 0.3);
+  border-radius: 12px;
+  backdrop-filter: blur(10px);
+  cursor: pointer;
+  z-index: 5;
+  transition: all 0.3s ease;
+}
+
+.floatingTech:hover {
+  border-color: rgba(99, 102, 241, 0.6);
+  box-shadow: 0 10px 30px rgba(99, 102, 241, 0.2);
+}
+
+.techIcon {
+  font-size: 1.5rem;
+}
+
+.techLabel {
+  font-size: 0.65rem;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.7);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* Connection Lines */
+.connectionLines {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.connectionPath {
+  fill: none;
+  stroke: rgba(99, 102, 241, 0.2);
+  stroke-width: 1;
+  stroke-dasharray: 5 5;
+}
+
+/* Orbiting Element */
+.orbitingElement {
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  border: 1px dashed rgba(99, 102, 241, 0.15);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.orbitDot {
+  position: absolute;
+  top: -6px;
+  left: 50%;
+  width: 12px;
+  height: 12px;
+  background: linear-gradient(135deg, #6366f1, #8b5cf6);
+  border-radius: 50%;
+  box-shadow: 0 0 20px rgba(99, 102, 241, 0.5);
+  transform: translateX(-50%);
+}
+
+/* Responsive for Tech Visual */
+@media (max-width: 1024px) {
+  .contentWrapper {
+    flex-direction: column;
+    gap: 3rem;
+  }
+  
+  .techVisualContainer {
+    max-width: 100%;
+    height: 350px;
+  }
+  
+  .visualCard {
+    max-width: 320px;
+  }
+}
+
+@media (max-width: 768px) {
+  .techVisualContainer {
+    display: none;
+  }
+  
+  .contentWrapper {
+    gap: 0;
+  }
+}

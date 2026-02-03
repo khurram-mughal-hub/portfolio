@@ -1,0 +1,90 @@
+/**
+ * SectionTitle Component Styles
+ */
+
+.container {
+  margin-bottom: 3rem;
+}
+
+/* Alignment */
+.left {
+  text-align: left;
+}
+
+.center {
+  text-align: center;
+}
+
+.right {
+  text-align: right;
+}
+
+/* Subtitle */
+.subtitle {
+  display: inline-block;
+  font-size: 0.875rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: var(--primary-color);
+  margin-bottom: 0.5rem;
+}
+
+/* Title */
+.title {
+  font-size: clamp(2rem, 5vw, 2.75rem);
+  font-weight: 700;
+  color: var(--text-primary);
+  line-height: 1.2;
+  margin: 0 0 1rem 0;
+}
+
+/* Divider */
+.divider {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.center .divider {
+  justify-content: center;
+}
+
+.left .divider {
+  justify-content: flex-start;
+}
+
+.right .divider {
+  justify-content: flex-end;
+}
+
+.dividerLine {
+  width: 40px;
+  height: 2px;
+  background: linear-gradient(90deg, var(--primary-color), var(--primary-light));
+  border-radius: 2px;
+}
+
+.dividerDot {
+  width: 8px;
+  height: 8px;
+  background: var(--primary-color);
+  border-radius: 50%;
+}
+
+/* Light variant for dark backgrounds */
+.light .title {
+  color: white;
+}
+
+.light .subtitle {
+  color: var(--primary-light);
+}
+
+.light .dividerLine {
+  background: linear-gradient(90deg, white, rgba(255, 255, 255, 0.5));
+}
+
+.light .dividerDot {
+  background: white;
+}

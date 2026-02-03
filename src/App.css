@@ -1,0 +1,8 @@
+/**
+ * App-level styles (mostly empty - using CSS modules)
+ */
+
+/* Any app-wide styles that don't fit in index.css */
+#root {
+  min-height: 100vh;
+}

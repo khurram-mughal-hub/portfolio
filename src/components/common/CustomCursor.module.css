@@ -1,0 +1,80 @@
+/**
+ * Custom Cursor Styles - Optimized with CSS transitions
+ */
+
+.cursor {
+  position: fixed;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
+  pointer-events: none;
+  z-index: 10000;
+  mix-blend-mode: difference;
+  will-change: transform;
+  transition: width 0.15s ease, height 0.15s ease, opacity 0.15s ease, background 0.15s ease;
+}
+
+.cursorTrail {
+  position: fixed;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  pointer-events: none;
+  z-index: 9999;
+  will-change: transform;
+  opacity: 0.5;
+  transition: width 0.3s ease, height 0.3s ease, opacity 0.3s ease;
+}
+
+/* Hover states */
+.hovering {
+  width: 48px;
+  height: 48px;
+  opacity: 0.8;
+}
+
+.trailHovering {
+  width: 80px;
+  height: 80px;
+  opacity: 0.3;
+}
+
+.pointer {
+  background: var(--accent-primary);
+  mix-blend-mode: normal;
+}
+
+.text {
+  width: 4px;
+  height: 32px;
+  border-radius: 2px;
+  background: var(--accent-primary);
+  mix-blend-mode: normal;
+}
+
+.expand {
+  background: transparent;
+  border: 2px solid var(--accent-primary);
+  mix-blend-mode: normal;
+}
+
+/* Hide default cursor when custom is active */
+@media (pointer: fine) {
+  :global(body) {
+    cursor: none !important;
+  }
+  
+  :global(a, button, [data-cursor]) {
+    cursor: none !important;
+  }
+}
+
+/* Disable on mobile */
+@media (max-width: 768px) {
+  .cursor,
+  .cursorTrail {
+    display: none;
+  }
+}
