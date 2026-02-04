@@ -7,11 +7,11 @@
 export const siteConfig = {
   name: "Khurram",
   title: "Full Stack Developer",
-  email: "hello@khurram.dev",
-  phone: "+1 (555) 123-4567",
-  location: "San Francisco, CA",
-  tagline: "Crafting Digital Experiences",
-  description: "I build exceptional digital experiences that combine beautiful design with robust functionality.",
+  email: "khurramak2005@gmail.com",
+  phone: "+92 322 6129311",
+  location: "Lahore, Pakistan",
+  tagline: "From Idea to Deployment: Full-Stack Solutions",
+  description: "I'm  Khurram, a versatile software professional proficient in designing, developing, and maintaining both the front-end (client-side) and back-end (server-side) components of web applications. Skilled in a variety of programming languages and frameworks, I ensure seamless integration between user interfaces and server logic to deliver robust, efficient, and user-friendly digital experiences.",
 };
 
 export const heroContent = {
@@ -29,17 +29,17 @@ export const aboutContent = {
   sectionSubtitle: "Get to know me better",
   headline: "Passionate Developer with a Love for Clean Code",
   paragraphs: [
-    "I'm a full-stack developer with over 5 years of experience building web applications that make a difference. I specialize in React, Node.js, and modern JavaScript, always staying current with the latest technologies and best practices.",
+    "I'm a full-stack developer with over 1 year of experience building web applications that make a difference. I specialize in React, Node.js, and modern JavaScript, always staying current with the latest technologies and best practices.",
     "My journey in tech started with a curiosity about how things work on the web. That curiosity has evolved into a career where I get to solve complex problems and create intuitive user experiences every day.",
     "When I'm not coding, you'll find me exploring new technologies, contributing to open-source projects, or sharing knowledge through technical writing and mentoring."
   ],
   stats: [
-    { value: "5+", label: "Years Experience" },
-    { value: "50+", label: "Projects Completed" },
-    { value: "30+", label: "Happy Clients" },
+    { value: "1+", label: "Years Experience" },
+    { value: "3+", label: "Projects Completed" },
+    { value: "10+", label: "Happy Clients" },
     { value: "99%", label: "Client Satisfaction" }
   ],
-  resumeLink: "#",
+  resumeLink: "resume.pdf",
   resumeText: "Download Resume"
 };
 
@@ -96,23 +96,23 @@ export const footerContent = {
 export const socialLinks = [
   {
     name: "GitHub",
-    url: "https://github.com/khurram",
+    url: "https://github.com/khurram-mughal-hub",
     icon: "github"
   },
   {
     name: "LinkedIn",
-    url: "https://linkedin.com/in/khurram",
+    url: "https://linkedin.com/in/khurrampervaiz",
     icon: "linkedin"
   },
   {
-    name: "Twitter",
-    url: "https://twitter.com/khurram",
-    icon: "twitter"
+    name: "Insatagram",
+    url: "https://instagram.com/_khurram_mughal_ak",
+    icon: "instagram"
   },
   {
-    name: "Dribbble",
-    url: "https://dribbble.com/khurram",
-    icon: "dribbble"
+    name: "Facebook",
+    url: "https://facebook.com/khurram.pervez.520",
+    icon: "facebook"
   }
 ];
 
@@ -122,7 +122,7 @@ export const skillsContent = {
   categories: [
     {
       name: "Frontend",
-      skills: ["React", "Next.js", "TypeScript", "Tailwind CSS", "Framer Motion"]
+      skills: ["React", "Next.js", "TypeScript", "Tailwind CSS", "HTML5", "CSS3", "JavaScript"]
     },
     {
       name: "Backend",
