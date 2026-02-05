@@ -40,7 +40,7 @@ export const aboutContent = {
     { value: "10+", label: "Happy Clients" },
     { value: "99%", label: "Client Satisfaction" }
   ],
-  resumeLink: "resume.pdf",
+  resumeLink: "/khurram-resume.pdf",
   resumeText: "Download Resume"
 };
 

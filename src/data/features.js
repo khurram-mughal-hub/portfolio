@@ -60,50 +60,16 @@ export const projects = [
     githubUrl: "https://github.com/khurram-mughal-hub/Inkly-blog",
     featured: true
   },
-  
   {
-    id: 3,
-    title: "Fitness Tracking App",
-    category: "Mobile",
-    description: "Cross-platform mobile app for tracking workouts, nutrition, and health metrics.",
-    image: "/images/project-3.jpg",
-    technologies: ["React Native", "Firebase", "Redux", "HealthKit"],
-    liveUrl: "https://example.com",
-    githubUrl: "https://github.com/khurram/fitness",
-    featured: true 
-  },
-  {
-    id: 4,
-    title: "AI Content Generator",
-    category: "AI/ML",
-    description: "An intelligent content generation tool powered by GPT for marketing copy and blog posts.",
-    image: "/images/project-4.jpg",
-    technologies: ["Python", "FastAPI", "OpenAI", "React"],
-    liveUrl: "https://example.com",
-    githubUrl: "https://github.com/khurram/ai-content",
-    featured: false
-  },
-  {
-    id: 5,
-    title: "Real Estate Portal",
-    category: "Full Stack",
-    description: "Property listing platform with advanced search, virtual tours, and agent management.",
-    image: "/images/project-5.jpg",
-    technologies: ["Vue.js", "Django", "PostgreSQL", "Mapbox"],
-    liveUrl: "https://example.com",
-    githubUrl: "https://github.com/khurram/realestate",
-    featured: false
-  },
-  {
-    id: 6,
-    title: "Social Dashboard",
+    id: 2,
+    title: "Project 2",
     category: "Web App",
-    description: "Analytics dashboard for social media management with scheduled posting and insights.",
-    image: "/images/project-6.jpg",
-    technologies: ["React", "D3.js", "Node.js", "Redis"],
-    liveUrl: "https://example.com",
-    githubUrl: "https://github.com/khurram/social-dash",
-    featured: false
+    description: "Description for project 2 - update this",
+    image: "/images/project-2.jpg",
+    technologies: ["React", "Node.js"],
+    liveUrl: "", // Add your live URL
+    githubUrl: "", // Add your GitHub URL
+    featured: true
   }
 ];
 
