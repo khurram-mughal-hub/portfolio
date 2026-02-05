@@ -5,7 +5,7 @@
 
 import { useRef, useEffect, useState } from 'react';
 import { motion, useScroll, useTransform, useInView, useSpring } from 'framer-motion';
-import { aboutContent, skillsContent } from '../../data/content';
+import { aboutContent, skillsContent, siteConfig } from '../../data/content';
 import { Button, Icon } from '../common';
 import styles from './About.module.css';
 
@@ -136,10 +136,18 @@ const About = () => {
               transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
             >
               <div className={styles.imageFrame}>
-                <div className={styles.imagePlaceholder}>
-                  <span className={styles.initials}>K</span>
-                  <div className={styles.imageGlow} />
-                </div>
+                {siteConfig.profileImage ? (
+                  <img 
+                    src={siteConfig.profileImage} 
+                    alt={siteConfig.name}
+                    className={styles.profileImage}
+                  />
+                ) : (
+                  <div className={styles.imagePlaceholder}>
+                    <span className={styles.initials}>{siteConfig.name.charAt(0)}</span>
+                    <div className={styles.imageGlow} />
+                  </div>
+                )}
                 <div className={styles.imageOverlay} />
               </div>
               
