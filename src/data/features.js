@@ -51,26 +51,16 @@ export const services = [
 export const projects = [
   {
     id: 1,
-    title: "E-Commerce Platform",
+    title: "Blogging site",
     category: "Full Stack",
-    description: "A complete e-commerce solution with real-time inventory, payment processing, and admin dashboard.",
-    image: "/images/project-1.jpg",
-    technologies: ["React", "Node.js", "PostgreSQL", "Stripe"],
-    liveUrl: "https://example.com",
-    githubUrl: "https://github.com/khurram/ecommerce",
+    description: "It defines the scope (consumer electronics/tech) and establishes authority.",
+    image: "/images/project-1.png",
+    technologies: ["React", "Tailwind CSS", "PostgreSQL", "Stripe", "Node.js", "Express"],
+    liveUrl: "https://inkly-blog-lemon.vercel.app/",
+    githubUrl: "https://github.com/khurram-mughal-hub/Inkly-blog",
     featured: true
   },
-  {
-    id: 2,
-    title: "Task Management App",
-    category: "Web App",
-    description: "A collaborative task management tool with real-time updates, team features, and productivity analytics.",
-    image: "/images/project-2.jpg",
-    technologies: ["Next.js", "TypeScript", "MongoDB", "Socket.io"],
-    liveUrl: "https://example.com",
-    githubUrl: "https://github.com/khurram/taskapp",
-    featured: true
-  },
+  
   {
     id: 3,
     title: "Fitness Tracking App",
@@ -80,7 +70,7 @@ export const projects = [
     technologies: ["React Native", "Firebase", "Redux", "HealthKit"],
     liveUrl: "https://example.com",
     githubUrl: "https://github.com/khurram/fitness",
-    featured: true
+    featured: true 
   },
   {
     id: 4,
@@ -120,27 +110,24 @@ export const projects = [
 export const testimonials = [
   {
     id: 1,
-    name: "Sarah Johnson",
+    name: "Sarah ",
     role: "CEO",
-    company: "TechStart Inc.",
     avatar: "/images/avatar-1.jpg",
     content: "Working with Khurram was an absolute pleasure. He delivered our project on time and exceeded all expectations. His attention to detail and technical expertise is remarkable.",
     rating: 5
   },
   {
     id: 2,
-    name: "Michael Chen",
+    name: "Saamir Khan",
     role: "Product Manager",
-    company: "InnovateCo",
     avatar: "/images/avatar-2.jpg",
     content: "Khurram transformed our outdated system into a modern, scalable application. His communication throughout the project was excellent, and he was always open to feedback.",
     rating: 5
   },
   {
     id: 3,
-    name: "Emily Rodriguez",
+    name: "Shaista Akram",
     role: "Founder",
-    company: "Design Studio",
     avatar: "/images/avatar-3.jpg",
     content: "I've worked with many developers, but Khurram stands out for his problem-solving abilities and commitment to quality. He truly cares about delivering the best solution.",
     rating: 5

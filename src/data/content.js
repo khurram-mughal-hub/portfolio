@@ -12,7 +12,7 @@ export const siteConfig = {
   location: "Lahore, Pakistan",
   tagline: "From Idea to Deployment: Full-Stack Solutions",
   description: "I'm  Khurram, a versatile software professional proficient in designing, developing, and maintaining both the front-end (client-side) and back-end (server-side) components of web applications. Skilled in a variety of programming languages and frameworks, I ensure seamless integration between user interfaces and server logic to deliver robust, efficient, and user-friendly digital experiences.",
-  profileImage: "/images/profile.jpg", // Add your profile photo here
+  profileImage: "/images/profile.png", // Add your profile photo here
 };
 
 export const heroContent = {

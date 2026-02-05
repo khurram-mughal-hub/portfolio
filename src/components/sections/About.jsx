@@ -182,7 +182,7 @@ const About = () => {
               transition={{ delay: 0.5, type: 'spring', stiffness: 200 }}
             >
               <span className={styles.expNumber}>
-                <AnimatedCounter target="5" suffix="+" />
+                <AnimatedCounter target="1" suffix="+" />
               </span>
               <span className={styles.expText}>Years of<br/>Experience</span>
             </motion.div>
